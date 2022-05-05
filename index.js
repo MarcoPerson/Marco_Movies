@@ -8,14 +8,21 @@ arrows.forEach((arrow, index) => {
     arrow.addEventListener("click", () => {
         const viewDimension = window.innerWidth;
         const dimension = lastItem.getBoundingClientRect();
-        console.log(dimension.right, viewDimension);
         if(dimension.right > viewDimension ){
             listFilms[index].style.transform = `translateX(${-315 * i++}px)`;
         }else{
             listFilms[index].style.transform = "translateX(0px)";
             i = 0;
         }
-        console.table(dimension);
     })
 })
 
+
+const toggler = document.querySelector(".navbar-dark-toggle");
+const toActive = document.querySelectorAll(".navbar-dark-toggle, .container, .sidebar, .navbar, .navbar-link a, .navbar-profile, .navbar-dark");
+
+toggler.addEventListener("click", () => {
+    toActive.forEach(element => {
+        element.classList.toggle("active");
+    })
+})

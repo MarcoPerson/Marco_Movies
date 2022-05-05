@@ -57,7 +57,7 @@ body{
 .navbar-dark{
     width: 40px;
     height: 20px;
-    color: black;
+    color: gold;
     background-color: white;
     border-radius: 10px;
     display: flex;
@@ -71,10 +71,11 @@ body{
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #eee;
+    background-color: #ccc;
     border-radius: 50%;
     left: 0;
     cursor: pointer;
+    transition: all 1s ease;
 }
 
 
@@ -239,4 +240,34 @@ body{
 
 .list-film-item:hover .hover-film{
     opacity: 1;
+}
+
+
+.container.active{
+    background-color: white;
+}
+
+.sidebar.active{
+    background-color: white;
+    color: black;
+}
+
+.navbar.active{
+    background-color: white;
+}
+
+.navbar-link a.active{
+    color: black;
+}
+
+.navbar-profile.active{
+    color: black;
+}
+
+.navbar-dark.active{
+    background-color: black;
+}
+
+.navbar-dark-toggle.active{
+    left: 20px;
 }
