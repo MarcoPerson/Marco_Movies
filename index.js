@@ -26,3 +26,20 @@ toggler.addEventListener("click", () => {
         element.classList.toggle("active");
     })
 })
+
+
+const bars = document.querySelector("#bars");
+const navlink = document.querySelector(".navbar-link");
+let i = 0;
+bars.addEventListener("click", () => {
+    if(i == 0){
+        bars.classList.remove("fa-bars");
+        bars.classList.add("fa-bars-staggered");
+    }else{
+        bars.classList.remove("fa-bars-staggered");
+        bars.classList.add("fa-bars");
+    }
+    i = (i+1)%2;
+    navlink.classList.toggle("active");
+    
+})

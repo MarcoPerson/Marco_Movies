@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-.navbar{
+.navbar {
     font-family: 'Sen', sans-serif;
     height: 50px;
     width: calc(100% - 90px);
@@ -15,9 +15,11 @@ body{
     justify-content: space-around;
     padding: 0px 20px 0px 70px;
     background-color: black;
+    position: fixed;
+    z-index: 100;
 }
 
-.navbar-logo{
+.navbar-logo {
     flex: 1;
     color: #0eb121;
     font-size: 20px;
@@ -27,11 +29,11 @@ body{
     align-items: center;
 }
 
-.navbar-link{
+.navbar-link {
     flex: 6;
 }
 
-.navbar-link ul{
+.navbar-link ul {
     height: 100%;
     padding: 0 20px;
     list-style: none;
@@ -39,13 +41,13 @@ body{
     align-items: center;
 }
 
-.navbar-link a{
+.navbar-link a {
     padding: 0 7px;
     text-decoration: none;
     color: white;
 }
 
-.navbar-profile{
+.navbar-profile {
     flex: 3;
     display: flex;
     align-items: center;
@@ -54,7 +56,7 @@ body{
     color: white;
 }
 
-.navbar-dark{
+.navbar-dark {
     width: 40px;
     height: 20px;
     color: gold;
@@ -67,7 +69,7 @@ body{
     position: relative;
 }
 
-.navbar-dark-toggle{
+.navbar-dark-toggle {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -79,7 +81,7 @@ body{
 }
 
 
-.navbar-profile img{
+.navbar-profile img {
     background-color: white;
     height: 30px;
     width: 30px;
@@ -87,7 +89,16 @@ body{
     border-radius: 50%;
 }
 
-.sidebar{
+#bars {
+    display: none;
+}
+
+#bars.fa-bars-staggered {
+    transition: all 1s ease;
+}
+
+
+.sidebar {
     height: 100vh;
     width: 50px;
     position: fixed;
@@ -103,18 +114,19 @@ body{
     color: white;
 }
 
-.sidebar i{
+.sidebar i {
     cursor: pointer;
 }
 
-.container{
+.container {
+    padding-top: 50px;
     min-height: calc(100vh - 50px);
     background-color: #151515;
     width: calc(100% - 50px);
     padding-left: 50px;
 }
 
-.primemovie{
+.primemovie {
     height: 60vh;
     display: flex;
     padding-left: 40px;
@@ -126,17 +138,17 @@ body{
     margin-bottom: 20px;
 }
 
-.primemovie img{
+.primemovie img {
     height: 70px;
     width: 200px;
     object-fit: contain;
 }
 
-.primemovie p{
+.primemovie p {
     width: 50%;
 }
 
-.primemovie button{
+.primemovie button {
     padding: .75rem 1rem;
     color: white;
     font-weight: bold;
@@ -146,11 +158,11 @@ body{
     background-color: #0eb121;
 }
 
-.carousel-list-film h1{
+.carousel-list-film h1 {
     color: #aaa;
 }
 
-.carousel-list-film{
+.carousel-list-film {
     height: 300px;
     overflow: hidden;
     width: auto;
@@ -159,12 +171,12 @@ body{
 
 
 
-.list-film{
+.list-film {
     position: relative;
     overflow: hidden;
 }
 
-.arrow{
+.arrow {
     font-size: 200px;
     position: absolute;
     color: lightgray;
@@ -177,7 +189,7 @@ body{
 }
 
 
-.list-film-wrapper{
+.list-film-wrapper {
     gap: 15px;
     width: max-content;
     height: 250px;
@@ -187,7 +199,7 @@ body{
     overflow: hidden;
 }
 
-.list-film-item{
+.list-film-item {
     min-height: 200px;
     min-width: 300px;
     position: relative;
@@ -197,13 +209,13 @@ body{
     transition: all 1s ease-in-out;
 }
 
-.list-film-item img{
+.list-film-item img {
     height: 200px;
     width: 300px;
     object-fit: cover;
 }
 
-.hover-film{
+.hover-film {
     opacity: 0;
     position: absolute;
     color: #aaa;
@@ -220,11 +232,11 @@ body{
     transition: all 1s ease-in-out;
 }
 
-.hover-film p{
+.hover-film p {
     text-align: center;
 }
 
-.hover-film button{
+.hover-film button {
     background-color: #0eb121;
     padding: 5px 10px;
     outline: none;
@@ -238,36 +250,84 @@ body{
     margin: 0px 30px;
 }
 
-.list-film-item:hover .hover-film{
+.list-film-item:hover .hover-film {
     opacity: 1;
 }
 
 
-.container.active{
+.container.active {
     background-color: white;
 }
 
-.sidebar.active{
+.sidebar.active {
     background-color: white;
     color: black;
 }
 
-.navbar.active{
+.navbar.active {
     background-color: white;
 }
 
-.navbar-link a.active{
+.navbar-link a.active {
     color: black;
 }
 
-.navbar-profile.active{
+.navbar-profile.active {
     color: black;
 }
 
-.navbar-dark.active{
+.navbar-dark.active {
     background-color: black;
 }
 
-.navbar-dark-toggle.active{
+.navbar-dark-toggle.active {
     left: 20px;
+}
+
+@media screen and (max-width:675px) {
+    #bars {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar-link {
+        transition: opacity 1s ease-out;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .navbar-link.active {
+        position: absolute;
+        flex-wrap: wrap;
+        width: calc(100vw - 50px);
+        background-color: rgba(170, 170, 170, 0.5);
+
+        height: 50px;
+        opacity: 1;
+        top: 50px;
+        left: 50px;
+        transition: all 1s ease-in-out;
+    }
+
+    .navbar-link.active ul{
+        flex-wrap: wrap;
+    }
+
+    .primemovie{
+        padding: 10px;
+    }
+
+    .primemovie p {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .carousel-list-film h1 {
+        font-size: 25px;
+    }
+
+    .navbar-logo{
+        padding-right: 10px;
+    }
 }
