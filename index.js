@@ -41,5 +41,14 @@ bars.addEventListener("click", () => {
     }
     i = (i+1)%2;
     navlink.classList.toggle("active");
-    
 })
+
+const navbar = document.querySelector(".navbar");
+window.onscroll = () => {
+    if(document.documentElement.scrollTop > 50){
+        navbar.classList.add("transparent");
+    }
+    else{
+        navbar.classList.remove("transparent");
+    }
+}
