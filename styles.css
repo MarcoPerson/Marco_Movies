@@ -51,6 +51,11 @@ body {
     padding: 0 7px;
     text-decoration: none;
     color: white;
+    font-weight: bolder;
+}
+
+.navbar-link a:hover {
+    color: rgb(238, 175, 175);
 }
 
 .navbar-profile {
@@ -164,6 +169,10 @@ body {
     background-color: #0eb121;
 }
 
+.primemovie button:hover{
+    color: rgb(238, 175, 175);
+}
+
 .carousel-list-film h1 {
     color: #aaa;
 }
@@ -191,7 +200,8 @@ body {
     transform: translateY(-50%);
     right: 0;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.7;
+    user-select: none;
 }
 
 
@@ -248,7 +258,12 @@ body {
     outline: none;
     border: none;
     border-radius: 10px;
+    color: white;
     cursor: pointer;
+}
+
+.hover-film button:hover{
+    color: rgb(238, 175, 175);
 }
 
 .list-film-item:hover {
@@ -338,6 +353,7 @@ body {
     }
 }
 
+
 @media screen and (max-width: 410px) {
     .sidebar{
         width: 30px;
@@ -360,5 +376,8 @@ body {
         width: calc(100vw - 30px);
         left: 30px;
         font-size: 13px;
+    }
+    .arrow{
+        font-size: 100px;
     }
 }
